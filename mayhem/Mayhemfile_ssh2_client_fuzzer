@@ -1,0 +1,10 @@
+project: savantenvs/libssh2
+target: ssh2_client_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ssh2_client_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/ssh2_client_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/ssh2_client_fuzzer/ssh2_client_fuzzer.dict
+    timeout: 5
